@@ -1,0 +1,14 @@
+<mat-sidenav-container class="mat-elevation-z4">
+  <mat-sidenav mode="side" [(opened)]="opened">
+    <mat-action-list>
+      <button
+        mat-list-item
+        class="sidenav-button"
+        [ngClass]="{ 'sidenav-button-active': true }"
+      >
+        <mat-icon style="margin-right: 0.25em">coronavirus</mat-icon>
+        Casos positivos
+      </button>
+    </mat-action-list>
+  </mat-sidenav>
+</mat-sidenav-container>

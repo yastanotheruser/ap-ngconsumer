@@ -1,0 +1,21 @@
+app-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 10;
+}
+
+app-sidenav {
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  z-index: 10;
+}
+
+app-positivos {
+  display: block;
+  flex-grow: 1;
+  padding: 7em 2em 4em;
+}

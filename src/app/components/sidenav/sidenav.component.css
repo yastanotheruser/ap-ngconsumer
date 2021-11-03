@@ -1,0 +1,11 @@
+mat-sidenav-container {
+  height: 100%;
+}
+
+.sidenav-button {
+  min-width: 250px;
+}
+
+.sidenav-button-active {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
