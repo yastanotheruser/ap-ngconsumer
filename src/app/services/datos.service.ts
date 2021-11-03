@@ -61,7 +61,7 @@ export class DatosService {
       );
     }
 
-    const o = forkJoin(os).pipe(
+    return forkJoin(os).pipe(
       map(([data, _countResponse]) => {
         this._positivos.data = <Positivo[]>data;
         if (typeof _countResponse !== 'undefined') {
@@ -75,11 +75,9 @@ export class DatosService {
           }
         }
 
+        this.positivos$.next(this._positivos);
         return this._positivos;
       })
     );
-
-    o.subscribe(ps => this.positivos$.next(ps));
-    return o;
   }
 }

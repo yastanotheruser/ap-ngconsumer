@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,4 +7,5 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class NavComponent {
   @Output() toggleMenu = new EventEmitter<void>();
+  @Input() menuButton = true;
 }

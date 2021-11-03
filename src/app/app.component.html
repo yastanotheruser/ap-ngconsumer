@@ -1,5 +1,24 @@
-<div class="wrapper">
-  <app-nav (toggleMenu)="showSidenav = !showSidenav"></app-nav>
-  <app-sidenav [opened]="showSidenav"></app-sidenav>
-  <app-positivos></app-positivos>
+<div class="wrapper" [class.mobile]="small">
+  <ng-container *ngIf="!small; else mobile">
+    <app-nav [menuButton]="false"></app-nav>
+    <div class="content-wrapper">
+      <app-sidenav [opened]="true"></app-sidenav>
+      <ng-container *ngTemplateOutlet="positivos"></ng-container>
+    </div>
+  </ng-container>
+  <ng-template #mobile>
+    <app-nav (toggleMenu)="showSidenav = !showSidenav"></app-nav>
+    <div class="sidenav-wrapper" [style.width]="showSidenav ? '100%' : '0'">
+      <app-sidenav [opened]="showSidenav"></app-sidenav>
+      <div
+        *ngIf="showSidenav"
+        class="sidenav-overlay"
+        (click)="showSidenav = false"
+      ></div>
+    </div>
+    <ng-container *ngTemplateOutlet="positivos"></ng-container>
+  </ng-template>
+  <ng-template #positivos>
+    <app-positivos></app-positivos>
+  </ng-template>
 </div>

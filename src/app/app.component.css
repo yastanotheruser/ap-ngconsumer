@@ -7,15 +7,40 @@ app-nav {
   z-index: 10;
 }
 
-app-sidenav {
+.content-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100% - 64px);
+  margin-top: 64px;
+}
+
+.wrapper:not(.mobile) app-positivos {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 2em 2em 4em;
+}
+
+.sidenav-wrapper {
   position: fixed;
   top: 64px;
   bottom: 0;
+  display: flex;
+  flex-direction: row;
   z-index: 10;
 }
 
-app-positivos {
+.sidenav-overlay {
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.wrapper.mobile app-positivos {
   display: block;
   flex-grow: 1;
-  padding: 7em 2em 4em;
+  padding: calc(64px + 2em) 2em 4em;
 }
+
